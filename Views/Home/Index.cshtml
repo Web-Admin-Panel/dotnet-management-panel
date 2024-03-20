@@ -1,0 +1,42 @@
+﻿@{
+    var products = new List<Product>
+    {
+        new Product { Id = 1, Name = "Product 1", Price = 9.99m },
+        new Product { Id = 2, Name = "Product 2", Price = 19.99m },
+        new Product { Id = 3, Name = "Product 3", Price = 29.99m },
+        // Add more products as needed
+    };
+}
+
+<h2>Product List</h2>
+
+@if (products.Any())
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var product in products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>
+                    <!-- Action buttons or links -->
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products are available.</p>
+}
