@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "adHQLwOitdcAKw54INq9iTWd4XdAUl2eL1q1JGv5M92h3E2KIuvDU60kxOJ3edsccWQXH4MMYVin9jmezZfSpA==",
+  "dgSpecHash": "0zr7L2TEIK/TRRoi53esQkXucyyt8bvt4/RsMlp0vUU02TIudbyvvNhoIzkX2nZvpvHpH56Vr/s0EnMzJVcU+w==",
   "success": true,
-  "projectFilePath": "/home/ali/Documents/Github/dotnet-management-panel/WebHelloWorld.csproj",
+  "projectFilePath": "/Users/remainedmind/ESSE/Education/EMU/4 semester/Windows Application/dotnet-management-panel/WebHelloWorld.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

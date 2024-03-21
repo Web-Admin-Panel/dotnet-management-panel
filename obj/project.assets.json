@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/ali/.nuget/packages/": {}
+    "/Users/remainedmind/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ali/Documents/Github/dotnet-management-panel/WebHelloWorld.csproj",
+      "projectUniqueName": "/Users/remainedmind/ESSE/Education/EMU/4 semester/Windows Application/dotnet-management-panel/WebHelloWorld.csproj",
       "projectName": "WebHelloWorld",
-      "projectPath": "/home/ali/Documents/Github/dotnet-management-panel/WebHelloWorld.csproj",
-      "packagesPath": "/home/ali/.nuget/packages/",
-      "outputPath": "/home/ali/Documents/Github/dotnet-management-panel/obj/",
+      "projectPath": "/Users/remainedmind/ESSE/Education/EMU/4 semester/Windows Application/dotnet-management-panel/WebHelloWorld.csproj",
+      "packagesPath": "/Users/remainedmind/.nuget/packages/",
+      "outputPath": "/Users/remainedmind/ESSE/Education/EMU/4 semester/Windows Application/dotnet-management-panel/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ali/.nuget/NuGet/NuGet.Config"
+        "/Users/remainedmind/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -62,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
