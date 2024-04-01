@@ -1,31 +1,26 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using WebHelloWorld.Models;
-
-namespace WebHelloWorld.Controllers;
+using Microsoft.EntityFrameworkCore;
+using WebHelloWorld.Data; // Use the correct namespace for your DbContext
+using WebHelloWorld.ViewModels; // This is where our ViewModel will reside
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ApplicationDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ApplicationDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
-    }
+        var viewModel = new IndexViewModel
+        {
+            Courses = await _context.Courses.ToListAsync(),
+            Topics = await _context.Topics.ToListAsync(),
+            Users = await _context.Users.ToListAsync()
+        };
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View(viewModel);
     }
 }

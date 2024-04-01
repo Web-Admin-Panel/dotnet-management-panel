@@ -12,9 +12,13 @@ namespace WebHelloWorld.Models
 
         [Column("description")]
         public string Description { get; set; }
-
-        // Change this property type from decimal to double
+        
         [Column("price")]
         public double Price { get; set; }
+
+        public ICollection<UserCourse> UserCourses { get; set; } = new List<UserCourse>();
+        public ICollection<TopicCourse> TopicCourses { get; set; } = new List<TopicCourse>();
+
+
     }
 }
