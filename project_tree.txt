@@ -1,0 +1,213 @@
+.
+├── Controllers
+│   ├── CoursesController.cs
+│   └── HomeController.cs
+├── Data
+│   └── ApplicationDbContext.cs
+├── LICENSE
+├── Models
+│   ├── Course.cs
+│   ├── ErrorViewModel.cs
+│   ├── Topic.cs
+│   ├── TopicCourse.cs
+│   ├── User.cs
+│   ├── UserCourse.cs
+│   └── UserTopic.cs
+├── Program.cs
+├── Properties
+│   └── launchSettings.json
+├── README.md
+├── ViewModels
+│   └── IndexViewModel.cs
+├── Views
+│   ├── Courses
+│   │   └── Index.cshtml
+│   ├── Home
+│   │   ├── Index.cshtml
+│   │   └── Privacy.cshtml
+│   ├── Shared
+│   │   ├── Error.cshtml
+│   │   ├── _Layout.cshtml
+│   │   ├── _Layout.cshtml.css
+│   │   └── _ValidationScriptsPartial.cshtml
+│   ├── _ViewImports.cshtml
+│   └── _ViewStart.cshtml
+├── WebHelloWorld.csproj
+├── appsettings.Development.json
+├── appsettings.json
+├── bin
+│   └── Debug
+│       └── net8.0
+│           ├── Microsoft.EntityFrameworkCore.Abstractions.dll
+│           ├── Microsoft.EntityFrameworkCore.Relational.dll
+│           ├── Microsoft.EntityFrameworkCore.dll
+│           ├── Npgsql.EntityFrameworkCore.PostgreSQL.dll
+│           ├── Npgsql.dll
+│           ├── WebHelloWorld
+│           ├── WebHelloWorld.deps.json
+│           ├── WebHelloWorld.dll
+│           ├── WebHelloWorld.pdb
+│           ├── WebHelloWorld.runtimeconfig.json
+│           ├── WebHelloWorld.staticwebassets.runtime.json
+│           ├── appsettings.Development.json
+│           └── appsettings.json
+├── dotnet-management-panel.sln
+├── obj
+│   ├── Debug
+│   │   └── net8.0
+│   │       ├── WebHello.D6605FE1.Up2Date
+│   │       ├── WebHelloWorld.AssemblyInfo.cs
+│   │       ├── WebHelloWorld.AssemblyInfoInputs.cache
+│   │       ├── WebHelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+│   │       ├── WebHelloWorld.GlobalUsings.g.cs
+│   │       ├── WebHelloWorld.MvcApplicationPartsAssemblyInfo.cache
+│   │       ├── WebHelloWorld.RazorAssemblyInfo.cache
+│   │       ├── WebHelloWorld.RazorAssemblyInfo.cs
+│   │       ├── WebHelloWorld.assets.cache
+│   │       ├── WebHelloWorld.csproj.AssemblyReference.cache
+│   │       ├── WebHelloWorld.csproj.CoreCompileInputs.cache
+│   │       ├── WebHelloWorld.csproj.FileListAbsolute.txt
+│   │       ├── WebHelloWorld.dll
+│   │       ├── WebHelloWorld.genruntimeconfig.cache
+│   │       ├── WebHelloWorld.pdb
+│   │       ├── WebHelloWorld.sourcelink.json
+│   │       ├── apphost
+│   │       ├── ref
+│   │       │   └── WebHelloWorld.dll
+│   │       ├── refint
+│   │       │   └── WebHelloWorld.dll
+│   │       ├── scopedcss
+│   │       │   ├── Views
+│   │       │   │   └── Shared
+│   │       │   │       └── _Layout.cshtml.rz.scp.css
+│   │       │   ├── bundle
+│   │       │   │   └── WebHelloWorld.styles.css
+│   │       │   └── projectbundle
+│   │       │       └── WebHelloWorld.bundle.scp.css
+│   │       ├── staticwebassets
+│   │       │   ├── msbuild.WebHelloWorld.Microsoft.AspNetCore.StaticWebAssets.props
+│   │       │   ├── msbuild.build.WebHelloWorld.props
+│   │       │   ├── msbuild.buildMultiTargeting.WebHelloWorld.props
+│   │       │   └── msbuild.buildTransitive.WebHelloWorld.props
+│   │       ├── staticwebassets.build.json
+│   │       ├── staticwebassets.development.json
+│   │       └── staticwebassets.pack.json
+│   ├── WebHelloWorld.csproj.nuget.dgspec.json
+│   ├── WebHelloWorld.csproj.nuget.g.props
+│   ├── WebHelloWorld.csproj.nuget.g.targets
+│   ├── project.assets.json
+│   ├── project.nuget.cache
+│   ├── project.packagespec.json
+│   ├── rider.project.model.nuget.info
+│   └── rider.project.restore.info
+└── wwwroot
+    ├── css
+    │   └── site.css
+    ├── favicon.ico
+    ├── js
+    │   └── site.js
+    └── lib
+        ├── bootstrap
+        │   ├── LICENSE
+        │   └── dist
+        │       ├── css
+        │       │   ├── bootstrap-grid.css
+        │       │   ├── bootstrap-grid.css.map
+        │       │   ├── bootstrap-grid.min.css
+        │       │   ├── bootstrap-grid.min.css.map
+        │       │   ├── bootstrap-grid.rtl.css
+        │       │   ├── bootstrap-grid.rtl.css.map
+        │       │   ├── bootstrap-grid.rtl.min.css
+        │       │   ├── bootstrap-grid.rtl.min.css.map
+        │       │   ├── bootstrap-reboot.css
+        │       │   ├── bootstrap-reboot.css.map
+        │       │   ├── bootstrap-reboot.min.css
+        │       │   ├── bootstrap-reboot.min.css.map
+        │       │   ├── bootstrap-reboot.rtl.css
+        │       │   ├── bootstrap-reboot.rtl.css.map
+        │       │   ├── bootstrap-reboot.rtl.min.css
+        │       │   ├── bootstrap-reboot.rtl.min.css.map
+        │       │   ├── bootstrap-utilities.css
+        │       │   ├── bootstrap-utilities.css.map
+        │       │   ├── bootstrap-utilities.min.css
+        │       │   ├── bootstrap-utilities.min.css.map
+        │       │   ├── bootstrap-utilities.rtl.css
+        │       │   ├── bootstrap-utilities.rtl.css.map
+        │       │   ├── bootstrap-utilities.rtl.min.css
+        │       │   ├── bootstrap-utilities.rtl.min.css.map
+        │       │   ├── bootstrap.css
+        │       │   ├── bootstrap.css.map
+        │       │   ├── bootstrap.min.css
+        │       │   ├── bootstrap.min.css.map
+        │       │   ├── bootstrap.rtl.css
+        │       │   ├── bootstrap.rtl.css.map
+        │       │   ├── bootstrap.rtl.min.css
+        │       │   └── bootstrap.rtl.min.css.map
+        │       └── js
+        │           ├── bootstrap.bundle.js
+        │           ├── bootstrap.bundle.js.map
+        │           ├── bootstrap.bundle.min.js
+        │           ├── bootstrap.bundle.min.js.map
+        │           ├── bootstrap.esm.js
+        │           ├── bootstrap.esm.js.map
+        │           ├── bootstrap.esm.min.js
+        │           ├── bootstrap.esm.min.js.map
+        │           ├── bootstrap.js
+        │           ├── bootstrap.js.map
+        │           ├── bootstrap.min.js
+        │           └── bootstrap.min.js.map
+        ├── jquery
+        │   ├── LICENSE.txt
+        │   └── dist
+        │       ├── jquery.js
+        │       ├── jquery.min.js
+        │       └── jquery.min.map
+        ├── jquery-validation
+        │   ├── LICENSE.md
+        │   └── dist
+        │       ├── additional-methods.js
+        │       ├── additional-methods.min.js
+        │       ├── jquery.validate.js
+        │       └── jquery.validate.min.js
+        └── jquery-validation-unobtrusive
+            ├── LICENSE.txt
+            ├── jquery.validate.unobtrusive.js
+            └── jquery.validate.unobtrusive.min.js
+
+37 directories, 138 files
+remainedmind@MyBook dotnet-management-panel % tree
+.
+├── Controllers
+│   ├── CoursesController.cs
+│   └── HomeController.cs
+├── Data
+│   └── ApplicationDbContext.cs
+├── LICENSE
+├── Models
+│   ├── Course.cs
+│   ├── ErrorViewModel.cs
+│   ├── Topic.cs
+│   ├── TopicCourse.cs
+│   ├── User.cs
+│   ├── UserCourse.cs
+│   └── UserTopic.cs
+├── Program.cs
+├── Properties
+│   └── launchSettings.json
+├── README.md
+├── ViewModels
+│   └── IndexViewModel.cs
+├── Views
+│   ├── Home
+│   │   ├── Index.cshtml
+│   │   └── Privacy.cshtml
+│   ├── Shared
+│   │   ├── Error.cshtml
+│   │   ├── _Layout.cshtml
+│   │   ├── _Layout.cshtml.css
+│   │   └── _ValidationScriptsPartial.cshtml
+│   ├── _ViewImports.cshtml
+│   └── _ViewStart.cshtml
+├── WebHelloWorld.csproj
+├── appsettings.Development.json
+├── appsettings.json
