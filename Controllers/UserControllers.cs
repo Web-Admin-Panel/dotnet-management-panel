@@ -4,19 +4,19 @@ using WebHelloWorld.Models;
 
 namespace WebHelloWorld.Controllers
 {
-    public class CoursesController : Controller
+    public class UsersController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CoursesController(ApplicationDbContext context)
+        public UsersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         public IActionResult Index()
         {
-            var courses = _context.Courses.ToList();
-            return View(courses);
+            var users = _context.Users.ToList();
+            return View(users);
         }
 
         public IActionResult Create()
@@ -25,23 +25,23 @@ namespace WebHelloWorld.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Course course)
+        public IActionResult Create(User user)
         {
             if (ModelState.IsValid)
             {
-                _context.Courses.Add(course);
+                _context.Users.Add(user);
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            return View(course);
+            return View(user);
         }
 
         public IActionResult Delete(int id)
         {
-            var course = _context.Courses.Find(id);
-            if (course != null)
+            var user = _context.Users.Find(id);
+            if (user != null)
             {
-                _context.Courses.Remove(course);
+                _context.Users.Remove(user);
                 _context.SaveChanges();
             }
             return RedirectToAction(nameof(Index));

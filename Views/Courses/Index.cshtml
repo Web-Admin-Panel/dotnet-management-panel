@@ -1,0 +1,33 @@
+@model IEnumerable<WebHelloWorld.Models.Course>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Manage Courses</h2>
+        <a href="/Courses/Create" class="btn btn-primary">Add New Course</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.CourseId</td>
+                    <td>@course.Name</td>
+                    <td>@course.Price</td>
+                    <td>@course.Description</td>
+                    <td>
+                        <a href="/Courses/Delete/@course.CourseId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

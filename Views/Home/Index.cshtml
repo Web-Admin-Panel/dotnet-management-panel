@@ -2,81 +2,12 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Courses and Topics</h2>
-        <table class="table">
-            <thead>
-            <tr>
-                <th colspan="4" style="text-align: center">Course</th>
-                <th colspan="@Model.Topics.Count" style="text-align: center">Topics</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>Id</th>
-                <th>Course Name</th>
-                <th>Price</th>
-                <th>Description</th>
-                @foreach (var topic in Model.Topics)
-                {
-                    <th>@topic.Name</th>
-                }
-            </tr>
-            </tbody>
-            <tbody>
-            @foreach (var course in Model.Courses)
-            {
-                <tr>
-                    <td>@course.CourseId</td>
-                    <td>@course.Name</td>
-                    <td>@course.Price</td>
-                    <td>@course.Description</td>
-                    @foreach (var topic in Model.Topics)
-                    {
-                        <td>
-                            @if(course.TopicCourses.ToArray().Any(t => t.TopicId == topic.TopicId))
-                            {
-                                <span>&#10004;</span> <!-- This marks the topic as part of the course -->
-                            }
-                            else
-                            {
-                                <span>&#10006;</span> <!-- This marks the topic as not part of the course -->
-                            }
-                        </td>
-                    }
-                </tr>
-            }
-            </tbody>
-        </table>
-    </div>
-
-
-    <div class="col-md-6">
-        <h2 style="text-align: center">Users</h2>
-        <ul>
-            @foreach (var user in Model.Users)
-            {
-                var displayText = user.Username;
-                string usernameLink = null;
-                if (!string.IsNullOrEmpty(user.Username))
-                {
-                    usernameLink = "https://t.me/" + user.Username;
-                    displayText = $"<a href=\"{usernameLink}\">Link</a>"; // Create the anchor tag as a string
-                }
-
-                <li>
-                    <code>@user.UserId</code> - 
-                    @user.FirstName @user.LastName 
-                    @if(usernameLink != null)
-                    {
-                        @Html.Raw(displayText) // Use Html.Raw to render the anchor tag correctly
-                    }
-                    else
-                    {
-                        
-                    }
-                </li>
-            }
-
-        </ul>
+        <h2>Welcome to the Online Education Management System</h2>
+        <p>Use the buttons below to navigate to the management pages.</p>
+        <div class="btn-group" role="group">
+            <a href="/Users" class="btn btn-primary">Manage Users</a>
+            <a href="/Courses" class="btn btn-primary">Manage Courses</a>
+            <a href="/Topics" class="btn btn-primary">Manage Topics</a>
+        </div>
     </div>
 </div>

@@ -1,0 +1,29 @@
+@model IEnumerable<WebHelloWorld.Models.Topic>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Manage Topics</h2>
+        <a href="/Topics/Create" class="btn btn-primary">Add New Topic</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var topic in Model)
+            {
+                <tr>
+                    <td>@topic.TopicId</td>
+                    <td>@topic.Name</td>
+                    <td>
+                        <a href="/Topics/Delete/@topic.TopicId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
