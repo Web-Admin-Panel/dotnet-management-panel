@@ -1,4 +1,6 @@
+using System.Runtime.InteropServices.JavaScript;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebHelloWorld.Data;
 using WebHelloWorld.Models;
 
@@ -38,9 +40,15 @@ namespace WebHelloWorld.Controllers
 
         public IActionResult Delete(int id)
         {
-            var user = _context.Users.Find(id);
+            var user = _context.Users
+                .Include(u => u.UserCourses)
+                .Include(u => u.UserTopics)
+                .FirstOrDefault(u => u.UserId == id);
+            
             if (user != null)
             {
+                _context.UserCourses.RemoveRange(user.UserCourses);
+                _context.UserTopics.RemoveRange(user.UserTopics);
                 _context.Users.Remove(user);
                 _context.SaveChanges();
             }

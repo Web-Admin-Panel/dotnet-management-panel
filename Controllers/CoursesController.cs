@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebHelloWorld.Data;
 using WebHelloWorld.Models;
 
@@ -38,9 +39,15 @@ namespace WebHelloWorld.Controllers
 
         public IActionResult Delete(int id)
         {
-            var course = _context.Courses.Find(id);
+            var course = _context.Courses
+                .Include(c => c.UserCourses)
+                .Include(c => c.TopicCourses)
+                .FirstOrDefault(c => c.CourseId == id);
+            
             if (course != null)
             {
+                _context.UserCourses.RemoveRange(course.UserCourses);
+                _context.TopicCourses.RemoveRange(course.TopicCourses);
                 _context.Courses.Remove(course);
                 _context.SaveChanges();
             }
