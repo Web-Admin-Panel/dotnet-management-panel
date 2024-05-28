@@ -37,6 +37,28 @@ namespace WebHelloWorld.Controllers
             return View(course);
         }
 
+        public IActionResult Edit(int id)
+        {
+            var course = _context.Courses.Find(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            return View(course);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(course).State = EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(course);
+        }
+
         public IActionResult Delete(int id)
         {
             var course = _context.Courses

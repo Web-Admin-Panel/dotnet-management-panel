@@ -37,6 +37,28 @@ namespace WebHelloWorld.Controllers
             return View(topic);
         }
 
+        public IActionResult Edit(string id)
+        {
+            var topic = _context.Topics.Find(id);
+            if (topic == null)
+            {
+                return NotFound();
+            }
+            return View(topic);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Topic topic)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(topic).State = EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(topic);
+        }
+
         public IActionResult Delete(string id)
         {
             var topic = _context.Topics

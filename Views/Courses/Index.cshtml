@@ -11,7 +11,7 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Description</th>
-                <th>Actions</th>
+                <th colspan="2">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -22,6 +22,9 @@
                     <td>@course.Name</td>
                     <td>@course.Price</td>
                     <td>@course.Description</td>
+                    <td>
+                        <a href="/Courses/Edit/@course.CourseId" class="btn btn-secondary">Edit</a>
+                    </td>
                     <td>
                         <a href="/Courses/Delete/@course.CourseId" class="btn btn-danger">Delete</a>
                     </td>

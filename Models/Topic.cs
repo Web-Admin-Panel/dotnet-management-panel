@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices.JavaScript;
 
@@ -6,9 +7,11 @@ namespace WebHelloWorld.Models;
 public class Topic
 {
     [Column("topic_id")]
+    [Required]
     public string TopicId { get; set; }
 
     [Column("name")]
+    [Required]
     public string Name { get; set; }
     
     [Column("description")]

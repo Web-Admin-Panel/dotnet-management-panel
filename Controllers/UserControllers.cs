@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.JavaScript;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebHelloWorld.Data;
@@ -38,7 +37,29 @@ namespace WebHelloWorld.Controllers
             return View(user);
         }
 
-        public IActionResult Delete(Int64 id)
+        public IActionResult Edit(long id)
+        {
+            var user = _context.Users.Find(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(user).State = EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(user);
+        }
+
+        public IActionResult Delete(long id)
         {
             var user = _context.Users
                 .Include(u => u.UserCourses)

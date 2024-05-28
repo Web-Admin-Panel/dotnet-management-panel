@@ -9,7 +9,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Actions</th>
+                <th colspan="2">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -18,9 +18,8 @@
                 <tr>
                     <td>@topic.TopicId</td>
                     <td>@topic.Name</td>
-                    <td>
-                        <a href="/Topics/Delete/@topic.TopicId" class="btn btn-danger">Delete</a>
-                    </td>
+                    <td><a href="/Topics/Edit/@topic.TopicId" class="btn btn-secondary">Edit</a></td>
+                    <td><a href="/Topics/Delete/@topic.TopicId" class="btn btn-danger">Delete</a></td>
                 </tr>
             }
             </tbody>
