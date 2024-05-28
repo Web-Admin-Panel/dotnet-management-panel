@@ -24,8 +24,8 @@ public class HomeController : Controller
                 .ToListAsync(),
 
             // Topics and Users don't need Includes here since they have no further navigation in this context
-            Topics = await _context.Topics.ToListAsync(),
-            Users = await _context.Users.ToListAsync()
+            Topics = await _context.Topics.ToListAsync()
+            // Users = await _context.Users.ToListAsync()
         };
 
         return View(viewModel);

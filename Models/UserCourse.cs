@@ -5,7 +5,7 @@ namespace WebHelloWorld.Models
     public class UserCourse
     {
         [Column("user_id")]
-        public int UserId { get; set; }
+        public Int64 UserId { get; set; }
         public User User { get; set; }
         
         [Column("course_id")]

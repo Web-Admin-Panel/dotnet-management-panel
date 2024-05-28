@@ -7,7 +7,7 @@ namespace WebHelloWorld.Models;
 public class User
 {
     [Column("user_id")]
-    public Int32 UserId { get; set; }
+    public Int64 UserId { get; set; }
 
     [Column("username")]
     public string? Username { get; set; }

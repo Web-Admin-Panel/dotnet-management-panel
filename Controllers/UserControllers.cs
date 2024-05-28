@@ -38,7 +38,7 @@ namespace WebHelloWorld.Controllers
             return View(user);
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Int64 id)
         {
             var user = _context.Users
                 .Include(u => u.UserCourses)
