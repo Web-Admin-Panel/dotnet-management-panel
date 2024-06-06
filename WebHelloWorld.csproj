@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\Courses\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Account\Login.cshtml" />
   </ItemGroup>
 
 </Project>

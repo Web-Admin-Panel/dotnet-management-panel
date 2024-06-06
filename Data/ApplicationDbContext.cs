@@ -9,9 +9,10 @@ namespace WebHelloWorld.Data
             : base(options)
         {
         }
-
         public DbSet<Course> Courses { get; set; }
         public DbSet<User> Users { get; set; }
+        
+        public DbSet<Admin> Admins { get; set; } // Add this line
         public DbSet<Topic> Topics { get; set; }
         public DbSet<UserTopic> UserTopics { get; set; }
         public DbSet<UserCourse> UserCourses { get; set; }
@@ -23,6 +24,7 @@ namespace WebHelloWorld.Data
 
             modelBuilder.Entity<Course>().ToTable("courses");
             modelBuilder.Entity<User>().ToTable("users");
+            modelBuilder.Entity<Admin>().ToTable("admins");
             modelBuilder.Entity<Topic>().ToTable("topics");
             modelBuilder.Entity<UserTopic>().ToTable("user_topics");
             modelBuilder.Entity<UserCourse>().ToTable("user_courses");
