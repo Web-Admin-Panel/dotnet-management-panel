@@ -4,24 +4,62 @@
 
 @model WebHelloWorld.ViewModels.LoginViewModel
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h2>Login</h2>
-        <form asp-action="Login" method="post">
-            <div class="form-group">
-                <label asp-for="Username"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
+<section class="h-100 gradient-form">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <img src="~/images/logo.png" style="width: 185px;" alt="logo">
+                                    <h4 class="mt-1 mb-5 pb-1">Courses Management System</h4>
+                                </div>
+
+                                <form asp-action="Login" method="post">
+                                    <p>Please login to your account</p>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input asp-for="Username" class="form-control" />
+                                        <label class="form-label" asp-for="Username">Username</label>
+                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                    </div>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input asp-for="Password" type="password" id="form2Example22"
+                                            class="form-control" />
+                                        <label class="form-label" asp-for="Password">Password</label>
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Log
+                                            in</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                <h4 class="mb-4">Empowering Educators with Simplicity</h4>
+                                <p class="small mb-0">Empowering Educators with Simplicity" reflects our goal to make
+                                    online course management easy. Our tool lets lecturers upload and manage courses
+                                    without needing technical skills. It simplifies tasks like content uploading,
+                                    pricing, and publishing, allowing educators to focus on teaching while reducing the
+                                    need for technical support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" type="password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+        </div>
     </div>
-</div>
+</section>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
