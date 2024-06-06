@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebHelloWorld.Data;
 using DotNetEnv;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,11 +16,28 @@ var connectionString = $"Host={Environment.GetEnvironmentVariable("DB_HOST")};" 
                        $"Username={Environment.GetEnvironmentVariable("DB_USERNAME")};" +
                        $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")}";
 
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(
         // builder.Configuration.GetConnectionString("DefaultConnection"))
         connectionString)
     );
+
+// builder.Services.AddAuthentication("CookieAuthentication")
+//     .AddCookie("CookieAuthentication", config =>
+//     {
+//         config.Cookie.Name = "UserLoginCookie";
+//         config.LoginPath = "/Login/Login";
+//     });
+
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, config =>
+    {
+        config.Cookie.Name = "UserLoginCookie";
+        config.LoginPath = "/Login/Login";
+    });
 
 var app = builder.Build();
 
@@ -39,10 +57,14 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    // pattern: "{controller=Account}/{action=Index}/{id?}");
-    pattern: "{controller=Login}/{action=Login}/{id?}");
+    name: "login",
+    pattern: "Login/{action=Login}/{id?}",
+    defaults: new { controller = "Login", action = "Login" });
 
+// Default route for other controllers and actions
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.Run();
 
 

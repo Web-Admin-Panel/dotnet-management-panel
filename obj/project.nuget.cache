@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9x5qBfBhA4DT8OnA+jYiCBQQn25Q9q8tAfWQ5YAisPczJUBQKvEtnIIuEn88ejJxdfwzzn/zWrOSQy4ROarQFw==",
+  "dgSpecHash": "JI/umJGBWIju4rC3B4V85oOsouzzfV/bm7SoY4HBN10FHtn87UV7hyWjN/szx8BCWyu8z0QxemCTOzF+rGBxQw==",
   "success": true,
-  "projectFilePath": "/Users/remainedmind/ESSE/Education/EMU/4 semester/Windows Application/dotnet-management-panel/WebHelloWorld.csproj",
+  "projectFilePath": "/Users/remainedmind/ESSE/Education/EMU/4 semester/Windows Application/OrlikDbManagement/dotnet-management-panel/WebHelloWorld.csproj",
   "expectedPackageFiles": [
     "/Users/remainedmind/.nuget/packages/dotnetenv/3.0.0/dotnetenv.3.0.0.nupkg.sha512",
     "/Users/remainedmind/.nuget/packages/microsoft.entityframeworkcore/8.0.3/microsoft.entityframeworkcore.8.0.3.nupkg.sha512",

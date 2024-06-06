@@ -1,33 +1,38 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebHelloWorld.Data; // Adjust to match your actual DbContext namespace
-using WebHelloWorld.ViewModels; // Adjust to match your actual ViewModel namespace
+using WebHelloWorld.Data;
+using WebHelloWorld.ViewModels;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
-public class HomeController : Controller
+namespace WebHelloWorld.Controllers
 {
-    private readonly ApplicationDbContext _context;
-
-    public HomeController(ApplicationDbContext context)
+    [Authorize]
+    public class HomeController : Controller
     {
-        _context = context;
-    }
+        private readonly ApplicationDbContext _context;
 
-    public async Task<IActionResult> Index()
-    {
-        var viewModel = new IndexViewModel
+        public HomeController(ApplicationDbContext context)
         {
-            // Include related data for Courses - TopicCourses and their Topics
-            Courses = await _context.Courses
-                .Include(c => c.TopicCourses)
-                .ThenInclude(tc => tc.Topic)
-                .ToListAsync(),
+            _context = context;
+        }
 
-            // Topics and Users don't need Includes here since they have no further navigation in this context
-            Topics = await _context.Topics.ToListAsync()
-            // Users = await _context.Users.ToListAsync()
-        };
+        public async Task<IActionResult> Index()
+        {
+            var viewModel = new IndexViewModel
+            {
+                // Include related data for Courses - TopicCourses and their Topics
+                Courses = await _context.Courses
+                    .Include(c => c.TopicCourses)
+                    .ThenInclude(tc => tc.Topic)
+                    .ToListAsync(),
 
-        return View(viewModel);
+                // Topics and Users don't need Includes here since they have no further navigation in this context
+                Topics = await _context.Topics.ToListAsync()
+                // Users = await _context.Users.ToListAsync()
+            };
+
+            return View(viewModel);
+        }
     }
 }
